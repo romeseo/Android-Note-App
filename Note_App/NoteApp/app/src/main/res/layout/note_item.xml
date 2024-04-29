@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Balise <data> utilisée pour lier des variables de données au fichier de présentation -->
+    <data>
+
+    </data>
+
+    <!-- Utilisation de MaterialCardView pour styliser l'élément de note -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:strokeColor="@color/colorPrimary"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <!-- Conteneur linéaire pour organiser les vues de l'élément de note -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- TextView pour afficher le titre de la note -->
+            <TextView
+                android:id="@+id/noteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Note title"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_black"
+                android:paddingStart="20dp"
+                android:gravity="center_vertical" />
+
+            <!-- Vue pour afficher une séparation visuelle -->
+            <View
+                android:id="@+id/spacerOne"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="3dp" />
+
+            <!-- TextView pour afficher le contenu de la note -->
+            <TextView
+                android:id="@+id/noteContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/example"
+                android:textColor="@color/textColorSecondary"
+                android:fontFamily="@font/roboto_bold"
+                android:textAlignment="center"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="20dp"
+                android:maxLines="5" />
+
+            <!-- Conteneur linéaire pour les boutons d'édition et de suppression de la note -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|end"
+                android:background="@color/colorPrimary">
+
+                <!-- ImageView pour le bouton d'édition de la note -->
+                <ImageView
+                    android:id="@+id/editNoteImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/round_edit_24"
+                    app:tint="@color/black"
+                    android:padding="8dp"
+                    android:background="@drawable/update_delete_background" />
+
+                <!-- ImageView pour le bouton de suppression de la note -->
+                <ImageView
+                    android:id="@+id/deleteNoteImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/round_delete_24"
+                    android:layout_marginHorizontal="20dp"
+                    app:tint="@color/black"
+                    android:padding="8dp"
+                    android:background="@drawable/update_delete_background" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
